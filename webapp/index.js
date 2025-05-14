@@ -1,7 +1,11 @@
-sap.ui.define(["sap/ui/core/mvc/XMLView"], (XMLView) => {
+sap.ui.define(["sap/ui/core/ComponentContainer"], (ComponentContainer) => {
   "use strict";
 
-  XMLView.create({
-    viewName: "com.iqbal.app.view.App",
-  }).then((oView) => oView.placeAt("content"));
+  new ComponentContainer({
+    name: "com.iqbal.app",
+    settings: {
+      id: "walkthrough",
+    },
+    async: true,
+  }).placeAt("content");
 });
