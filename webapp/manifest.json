@@ -31,7 +31,8 @@
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
           "bundleName": "com.iqbal.app.i18n.i18n",
-          "supportedLocales": [""],
+          "bundleLocale": "{sap.ui.getCore().getConfiguration().getLanguage()}",
+          "supportedLocales": ["en", "ja"],
           "fallbackLocale": ""
         }
       }
