@@ -1,6 +1,9 @@
 sap.ui.define(
-  ["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"],
-  (UIComponent, JSONModel) => {
+  [
+    "sap/ui/core/UIComponent",
+    "sap/ui/model/json/JSONModel",
+  ],
+  (UIComponent, JSONModel,) => {
     "use strict";
 
     return UIComponent.extend("com.iqbal.app.Component", {
@@ -12,6 +15,13 @@ sap.ui.define(
       init() {
         // call the init function of the parent
         UIComponent.prototype.init.apply(this, arguments);
+
+        // Get the i18n resource model
+        const oResourceModel = this.getModel("i18n");
+        const sTitle = oResourceModel.getResourceBundle().getText("appTitle");
+
+        // Dynamically set the document title
+        document.title = sTitle;
 
         // set data model
         const oData = {
