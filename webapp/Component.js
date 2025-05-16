@@ -28,6 +28,7 @@ sap.ui.define(
           recipient: {
             name: "Iqbal",
           },
+          imagePath: "img/1.jpg"
         };
         const oModel = new JSONModel(oData);
         this.setModel(oModel);

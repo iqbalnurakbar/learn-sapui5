@@ -17,6 +17,22 @@
                 class="sapUiSmallMarginEnd"
             />
             <Button
+                id="imageDialogButton"
+                icon="sap-icon://world"
+                text="{i18n>imageDialogButtonText}"
+                press=".onShowImageDialog"
+                class="sapUiSmallMarginEnd"
+            />
+
+            <Button
+                id="videoDialogButton"
+                icon="sap-icon://world"
+                text="{i18n>videoDialogButtonText}"
+                press=".onShowVideoDialog"
+                class="sapUiSmallMarginEnd"
+            />
+
+            <Button
                 text="{i18n>showHelloButtonText}"
                 press=".onShowHello"
                 class="MyCustomButton"

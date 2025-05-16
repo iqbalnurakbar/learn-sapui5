@@ -27,10 +27,29 @@ sap.ui.define(
         this.oDialog.open();
       },
 
-      onCloseDialog() {
+      async onShowImageDialog() {
+        this.getView().getModel().setProperty("/imagePath", "img/1.jpg");
+
+        this.oImageDialog ??= await this.loadFragment({
+          name: "com.iqbal.app.view.ImageDialog",
+        });
+
+        this.oImageDialog.open();
+      },
+
+      async onShowVideoDialog() {
+        // Create video dialog lazily
+        this.oVideoDialog ??= await this.loadFragment({
+          name: "com.iqbal.app.view.VideoDialog",
+        });
+
+        this.oVideoDialog.open();
+      },
+
+      onCloseDialog(sDialogId) {
         // note: We don't need to chain to the pDialog promise, since this event handler
         // is only called from within the loaded dialog itself.
-        this.byId("helloDialog").close();
+        this.byId(sDialogId).close();
       },
     });
   }
