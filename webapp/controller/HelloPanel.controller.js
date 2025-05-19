@@ -15,6 +15,7 @@ sap.ui.define(
         // show message
         MessageToast.show(sMsg, {
           duration: 500,
+          
         });
       },
 

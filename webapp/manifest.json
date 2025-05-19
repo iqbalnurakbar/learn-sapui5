@@ -8,6 +8,15 @@
     "type": "application",
     "applicationVersion": {
       "version": "1.0.0"
+    },
+    "dataSources": {
+      "invoiceRemote": {
+        "uri": "V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
     }
   },
   "sap.ui": {
@@ -35,6 +44,13 @@
           "supportedLocales": ["en", "ja"],
           "fallbackLocale": ""
         }
+      },
+      "invoice": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "InvoiceData.json"
+      },
+      "invoiceOdata": {
+        "dataSource": "invoiceRemote"
       }
     },
     "rootView": {

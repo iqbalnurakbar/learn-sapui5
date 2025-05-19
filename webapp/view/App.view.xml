@@ -10,6 +10,9 @@
                 <Page title="{i18n>homePageTitle}">
                     <content>
                         <mvc:XMLView viewName="com.iqbal.app.view.HelloPanel" />
+                        <mvc:XMLView
+                            viewName="com.iqbal.app.view.InvoiceList"
+                        />
                     </content>
                 </Page>
             </pages>
