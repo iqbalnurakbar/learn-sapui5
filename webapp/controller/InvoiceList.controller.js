@@ -14,7 +14,10 @@ sap.ui.define(
         const oViewModel = new JSONModel({
           currency: "EUR",
         });
-        this.getView().setModel(oViewModel, "view");
+        this.getOwnerComponent().setModel(oViewModel, "view");
+        this.getOwnerComponent()
+          .getModel("view")
+          .setProperty("/isRemoteData", false);
       },
 
       onFilterInvoice(oEvent) {
@@ -56,15 +59,21 @@ sap.ui.define(
       onLoadLocal() {
         this._clearFilter();
         const oModel = this.getOwnerComponent().getModel("invoice");
+        const oViewModel = this.getOwnerComponent().getModel("view");
         if (oModel) {
           this.getView().setModel(oModel, "invoice");
+          oViewModel.setProperty("/isRemoteData", false);
           MessageToast.show("Local data loaded successfully!");
         }
+        console.log(
+          this.getView().getModel("view").getProperty("/isRemoteData")
+        );
       },
 
       onLoadRemote() {
         this._clearFilter();
         const oModel = this.getOwnerComponent().getModel("invoiceOdata");
+        const oViewModel = this.getOwnerComponent().getModel("view");
         if (oModel) {
           if (oModel.getMetadata()) {
             // Metadata already loaded, directly set the model
@@ -78,6 +87,10 @@ sap.ui.define(
             });
           }
         }
+        oViewModel.setProperty("/isRemoteData", true);
+        console.log(
+          this.getView().getModel("view").getProperty("/isRemoteData")
+        );
       },
 
       _clearFilter() {
