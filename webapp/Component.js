@@ -1,9 +1,6 @@
 sap.ui.define(
-  [
-    "sap/ui/core/UIComponent",
-    "sap/ui/model/json/JSONModel",
-  ],
-  (UIComponent, JSONModel,) => {
+  ["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"],
+  (UIComponent, JSONModel) => {
     "use strict";
 
     return UIComponent.extend("com.iqbal.app.Component", {
@@ -31,6 +28,9 @@ sap.ui.define(
         };
         const oModel = new JSONModel(oData);
         this.setModel(oModel);
+
+        // create the views based on the url/hash
+        this.getRouter().initialize();
       },
     });
   }

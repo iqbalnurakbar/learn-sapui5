@@ -5,17 +5,7 @@
     displayBlock="true"
 >
     <Shell>
-        <App class="MyAppDemoWT">
-            <pages>
-                <Page title="{i18n>homePageTitle}">
-                    <content>
-                        <mvc:XMLView viewName="com.iqbal.app.view.HelloPanel" />
-                        <mvc:XMLView
-                            viewName="com.iqbal.app.view.InvoiceList"
-                        />
-                    </content>
-                </Page>
-            </pages>
-        </App>
+        <App class="MyAppDemoWT"
+        id="app" />
     </Shell>
 </mvc:View>

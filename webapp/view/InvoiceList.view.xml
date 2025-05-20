@@ -64,7 +64,7 @@
                 title="{invoice>Quantity} x {invoice>ProductName}"
                 number="{
                     parts: [
-                        'invoice>ExTendedPrice',
+                        'invoice>ExtendedPrice',
                         'view>/currency'
                     ],
                     type: 'Currency',
@@ -74,6 +74,8 @@
                 }"
                 numberUnit="{view>/currency}"
                 numberState="{=${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}"
+                type="Navigation"
+                press=".onPress"
             >
                 <firstStatus>
                     <ObjectStatus
