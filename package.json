@@ -4,7 +4,8 @@
   "description": "The UI5 walkthrough application",
   "scripts": {
     "start": "ui5 serve -o index.html",
-    "test": "ui5 serve -o test/testsuite.qunit.html"
+    "test": "ui5 serve -o test/testsuite.qunit.html",
+    "build": "ui5 build --all --clean-dest"
   },
   "devDependencies": {
     "@ui5/cli": "^4.0.15",

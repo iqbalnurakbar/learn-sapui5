@@ -1,0 +1,12 @@
+
+.myAppDemoWT .myCustomText {
+  display: inline-block;
+  font-weight: bold;
+}
+/*  ProductRating */
+.myAppDemoWTProductRating {
+  padding: 0.75rem;
+}
+.myAppDemoWTProductRating .sapMRI {
+  vertical-align: initial;
+}
