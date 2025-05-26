@@ -1,2 +1,0 @@
-sap.ui.define(["sap/ui/core/mvc/Controller","sap/m/MessageToast"],(e,o)=>{"use strict";return e.extend("com.iqbal.app.controller.HelloPanel",{onShowHello(){const e=this.getView().getModel("i18n").getResourceBundle();const l=this.getView().getModel().getProperty("/recipient/name");const t=e.getText("helloMsg",[l]);o.show(t,{duration:500})},async onOpenDialog(){this.oDialog??=await this.loadFragment({name:"com.iqbal.app.view.HelloDialog"});this.oDialog.open()},onCloseDialog(){this.byId("helloDialog").close()}})});
-//# sourceMappingURL=HelloPanel.controller.js.map
