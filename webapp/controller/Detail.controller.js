@@ -22,6 +22,7 @@ sap.ui.define(
       },
 
       onObjectMatched(oEvent) {
+        this.byId("rating").reset();
         const isRemote = this.getOwnerComponent()
           .getModel("view")
           .getProperty("/isRemoteData");

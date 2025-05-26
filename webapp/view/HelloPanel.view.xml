@@ -25,6 +25,22 @@
                 class="MyCustomButton"
             />
 
+            <Button
+                id="imageDialogButton"
+                icon="sap-icon://world"
+                text="{i18n>imageDialogButtonText}"
+                press=".onShowImageDialog"
+                class="sapUiSmallMarginBeginEnd"
+            />
+
+            <Button
+                id="videoDialogButton"
+                icon="sap-icon://world"
+                text="{i18n>videoDialogButtonText}"
+                press=".onShowVideoDialog"
+                class="sapUiSmallMarginEnd"
+            />
+
             <Input
                 value="{/recipient/name}"
                 description="{i18n>helloText} {/recipient/name}"
